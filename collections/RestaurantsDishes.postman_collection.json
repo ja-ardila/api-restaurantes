@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "a5490c33-cd2e-4972-8162-c60f5c4bf771",
+		"name": "RestaurantsDishes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30520035",
+		"_collection_link": "https://sw-nube-uniandes.postman.co/workspace/My-Workspace~17c10020-4a93-4aa5-8fa3-b12ee2fb3587/collection/30520035-a5490c33-cd2e-4972-8162-c60f5c4bf771?action=share&source=collection_link&creator=30520035"
+	},
+	"item": [
+		{
+			"name": "RestaurantsDishes",
+			"item": [
+				{
+					"name": "Add Dish to Restaurant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dishId\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/restaurants/:restaurantId/dishes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								":restaurantId",
+								"dishes"
+							],
+							"variable": [
+								{
+									"key": "restaurantId"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Dishes from Restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/restaurants/:restaurantId/dishes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								":restaurantId",
+								"dishes"
+							],
+							"variable": [
+								{
+									"key": "restaurantId"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specific Dish from Restaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/restaurants/:restaurantId/dishes/:dishId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								":restaurantId",
+								"dishes",
+								":dishId"
+							],
+							"variable": [
+								{
+									"key": "restaurantId"
+								},
+								{
+									"key": "dishId"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update All Dishes for Restaurant",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"dishIds\": [\n    1,\n    2,\n    3\n  ]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/restaurants/:restaurantId/dishes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								":restaurantId",
+								"dishes"
+							],
+							"variable": [
+								{
+									"key": "restaurantId"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Dish from Restaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/restaurants/:restaurantId/dishes/:dishId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"restaurants",
+								":restaurantId",
+								"dishes",
+								":dishId"
+							],
+							"variable": [
+								{
+									"key": "restaurantId"
+								},
+								{
+									"key": "dishId"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

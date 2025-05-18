@@ -4,8 +4,9 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { RestaurantsModule } from './restaurants/restaurants.module';
 import { DishesModule } from './dishes/dishes.module';
-import { RestaurantsDishesService } from './restaurants-dishes/restaurants-dishes.service';
-import { RestaurantsDishesController } from './restaurants-dishes/restaurants-dishes.controller';
+import { RestaurantsDishesModule } from './restaurants-dishes/restaurants-dishes.module';
+import { RestaurantEntity } from './entities/restaurant.entity';
+import { DishEntity } from './entities/dish.entity';
 
 @Module({
   imports: [
@@ -13,16 +14,17 @@ import { RestaurantsDishesController } from './restaurants-dishes/restaurants-di
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'tu_usuario',
-      password: 'tu_contraseña',
+      username: 'postgres',
+      password: 'postgres',
       database: 'restaurant_db',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [RestaurantEntity, DishEntity],
       synchronize: true,
     }),
     RestaurantsModule,
     DishesModule,
+    RestaurantsDishesModule,
   ],
-  controllers: [AppController, RestaurantsDishesController],
-  providers: [AppService, RestaurantsDishesService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

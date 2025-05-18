@@ -5,19 +5,19 @@ import { DishEntity } from './dish.entity';
 @Entity('restaurants')
 export class RestaurantEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column()
-  address: string;
+  address!: string;
 
   @Column({ type: 'enum', enum: ['Italiana','Japonesa','Mexicana','Colombiana','India','Internacional'] })
-  cuisine: 'Italiana' | 'Japonesa' | 'Mexicana' | 'Colombiana' | 'India' | 'Internacional';
+  cuisine!: 'Italiana' | 'Japonesa' | 'Mexicana' | 'Colombiana' | 'India' | 'Internacional';
 
   @Column()
-  website: string;
+  website!: string;
 
   @ManyToMany(() => DishEntity, dish => dish.restaurants)
   @JoinTable({
@@ -25,5 +25,5 @@ export class RestaurantEntity {
     joinColumn: { name: 'restaurant_id', referencedColumnName: 'id' },
     inverseJoinColumn: { name: 'dish_id', referencedColumnName: 'id' },
   })
-  dishes: DishEntity[];
+  dishes!: DishEntity[];
 }

@@ -5,20 +5,20 @@ import { RestaurantEntity } from './restaurant.entity';
 @Entity('dishes')
 export class DishEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id!: number;
 
   @Column()
-  name: string;
+  name!: string;
 
   @Column()
-  description: string;
+  description!: string;
 
   @Column('decimal')
-  price: number;
+  price!: number;
 
   @Column({ type: 'enum', enum: ['entrada','plato fuerte','postre','bebida'] })
-  category: 'entrada' | 'plato fuerte' | 'postre' | 'bebida';
+  category!: 'entrada' | 'plato fuerte' | 'postre' | 'bebida';
 
   @ManyToMany(() => RestaurantEntity, restaurant => restaurant.dishes)
-  restaurants: RestaurantEntity[];
+  restaurants!: RestaurantEntity[];
 }
